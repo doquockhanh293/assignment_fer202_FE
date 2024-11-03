@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom"; // Thêm useNavigate
 
 const ProductEdit = () => {
   const { id } = useParams();
+  const navigate = useNavigate(); // Khởi tạo navigate
   const [product, setProduct] = useState({
     id: "",
     name: "",
@@ -55,8 +56,8 @@ const ProductEdit = () => {
       if (!response.ok) {
         throw new Error("Failed to update product");
       }
-      // Chuyển hướng người dùng trở lại trang chi tiết sản phẩm đã được cập nhật
-      window.location.href = `/products/${id}`;
+      alert("Updated successfully");
+      navigate(`/products/${id}`); // Chuyển hướng về trang chi tiết sản phẩm sau khi cập nhật thành công
     } catch (error) {
       setError(error.message);
     }
@@ -68,7 +69,9 @@ const ProductEdit = () => {
 
   return (
     <div className="container">
-      <h2>Edit Product</h2>
+      <h2 className="my-4" style={{ color: "orange" }}>
+        Edit Products
+      </h2>
       <div className="form-group">
         <label htmlFor="id">id:</label>
         <input
@@ -126,7 +129,7 @@ const ProductEdit = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="image">image</label>
+        <label htmlFor="image">Image:</label>
         <input
           type="text"
           className="form-control"

@@ -1,3 +1,5 @@
+//productapp
+
 import React, { useState } from "react";
 
 const ProductAdd = () => {
@@ -57,9 +59,11 @@ const ProductAdd = () => {
 
   return (
     <div className="container">
-      <h2>Add Product</h2>
-      {error && <p>Error: {error}</p>}
-      {success && <p>Product added successfully!</p>}
+      <h2 className="my-4" style={{ color: "orange" }}>
+        Add Products
+      </h2>
+      {error && <p style={{ color: "red" }}>Error: {error}</p>}
+      {success && <p style={{ color: "green" }}>Product added successfully!</p>}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="id">Product id</label>

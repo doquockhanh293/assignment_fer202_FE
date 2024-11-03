@@ -1,3 +1,5 @@
+//manage
+
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../ProductList.css";
@@ -51,7 +53,9 @@ const Manage = () => {
 
   return (
     <div className="container-fluid">
-      <h2 className="my-4">Manage Products</h2>
+      <h2 className="my-4" style={{ color: "orange" }}>
+        Manage Products
+      </h2>
       {error && <p>Error: {error}</p>}
       <table className="table table-striped">
         <thead>
