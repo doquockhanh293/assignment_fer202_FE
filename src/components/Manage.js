@@ -74,7 +74,9 @@ const Manage = () => {
               <td>{index + 1}</td>
               <td>{product.name}</td>
               <td>{product.description}</td>
-              <td>{product.price}</td>
+              <td style={{ textDecoration: "line-through" }}>
+                {product.price}
+              </td>
               <td>{product.currentPrice}</td>
               <td>
                 <button

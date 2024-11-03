@@ -63,7 +63,14 @@ const ProductAdd = () => {
         Add Products
       </h2>
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
-      {success && <p style={{ color: "green" }}>Product added successfully!</p>}
+      {success && (
+        <p style={{ color: "green" }}>
+          Product added successfully!{" "}
+          <span style={{ textDecoration: "line-through" }}>
+            {newProduct.price}
+          </span>
+        </p>
+      )}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="id">Product id</label>
@@ -124,9 +131,8 @@ const ProductAdd = () => {
             required
           />
         </div>
-
         <div className="form-group">
-          <label htmlFor="image">image</label>
+          <label htmlFor="image">Image</label>
           <input
             type="text"
             className="form-control"

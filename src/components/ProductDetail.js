@@ -48,7 +48,12 @@ const ProductDetail = () => {
             <div className="card-body">
               <h5 className="card-title">{product.name}</h5>
               <p className="card-text">Description: {product.description}</p>
-              <p className="card-text">Price: {product.price}</p>
+              <p className="card-text">
+                Price:{" "}
+                <span style={{ textDecoration: "line-through" }}>
+                  {product.price}
+                </span>
+              </p>
               <p className="card-text">Current Price: {product.currentPrice}</p>
               <Link to={`/products/${id}/edit`} className="btn btn-primary">
                 Edit
